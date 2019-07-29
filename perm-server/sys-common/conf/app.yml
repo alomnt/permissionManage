@@ -1,0 +1,15 @@
+DisablePathCorrection: false
+EnablePathEscape: false
+FireMethodNotAllowed: false
+DisableBodyConsumptionOnUnmarshal: false
+TimeFormat: Mon, 01 Jan 2006 15:04:05 GMT
+Charset: UTF-8
+#自定义配置
+Other:
+  Port: 8098
+  IgnoreURLs: [/, /perm/user/login, /perm/user/registe, /perm/login_pwd]
+  JWTTimeout: 900 #second
+  LogLevel: debug
+  Secret: xxx-Secret
+
+

@@ -1,0 +1,7 @@
+#reids
+[redis]
+  Addr = "127.0.0.1:6379"
+  Password = "123456"
+  RedisMaxIdle = 10
+  RedisIdleTimeoutSec = 43200
+  DB = 1

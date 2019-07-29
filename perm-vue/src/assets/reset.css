@@ -1,0 +1,12 @@
+.el-row {
+    margin-bottom: 20px;
+}
+.demo-input-suffix {
+    display: inline-block;
+    width: 35%;
+    text-align: right;
+}
+.table {
+    width: 100%!important;
+    font-size: 14px!important;
+}
