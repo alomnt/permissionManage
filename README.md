@@ -1,6 +1,6 @@
 > #### 软件架构
 > 目前支持单web架构，如果部署成前后端分离，可用nginx中间件代理(已添加跨域访问设置)。
->    * 采用了Casbin做Restful的rbac权限控制；
+>    * 采用了golang iris框架；
 >    * 采用jwt做用户认证、回话控制；
 >    * 采用Mysql+xorm做持久层；
 >    * 采用redis做tocken缓存；
