@@ -1,13 +1,13 @@
 package userService
 
 import (
-	"../../../sys-common/db"
-	"../../../sys-common/supports"
-	"../../../sys-common/vo"
-	"../../models/user"
-	"../../vo/uservo"
 	"fmt"
 	"github.com/kataras/golog"
+	"permissionManage/perm-server/sys-common/db"
+	"permissionManage/perm-server/sys-common/supports"
+	"permissionManage/perm-server/sys-common/vo"
+	"permissionManage/perm-server/sys-sysbase/models/user"
+	"permissionManage/perm-server/sys-sysbase/vo/uservo"
 	"strings"
 )
 
@@ -133,7 +133,7 @@ func FindDepartmentList(paramVo *uservo.DepartmentParamVo) (res *supports.SimRes
 	tmpRes := make([]*user.Department, 0)
 
 	sql := fmt.Sprintf(" SELECT * FROM cd_sys_user_department ud " +
-			" WHERE ud.is_deleted = false")
+		" WHERE ud.is_deleted = false")
 
 	err := e.SQL(sql).Find(&tmpRes)
 	if err != nil {
@@ -158,7 +158,7 @@ func FindDepartments(paramVo *uservo.DepartmentParamVo) (rs []*user.Department, 
 	result := make([]*user.Department, 0)
 
 	sql := fmt.Sprintf(" SELECT * FROM cd_sys_user_department ud " +
-			" WHERE ud.is_deleted = false")
+		" WHERE ud.is_deleted = false")
 
 	err = e.SQL(sql).Find(&result)
 

@@ -1,9 +1,9 @@
 package user
 
 import (
-	"../../../sys-common/db"
-	"../../../sys-common/utils"
 	"fmt"
+	"permissionManage/perm-server/sys-common/db"
+	"permissionManage/perm-server/sys-common/utils"
 	"strconv"
 	"time"
 )

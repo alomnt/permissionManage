@@ -1,19 +1,19 @@
 package userService
 
 import (
-	"../../../sys-common/db"
-	"../../../sys-common/middleware/jwts"
-	"../../../sys-common/models/baseModel"
-	"../../../sys-common/supports"
-	"../../../sys-common/utils"
-	"../../../sys-common/vo"
-	"../../models/user"
-	"../../vo/uservo"
-	"github.com/kataras/golog"
-	"github.com/kataras/iris"
-	"strings"
 	"fmt"
+	"github.com/kataras/golog"
+	"github.com/kataras/iris/v12"
+	"permissionManage/perm-server/sys-common/db"
+	"permissionManage/perm-server/sys-common/middleware/jwts"
+	"permissionManage/perm-server/sys-common/models/baseModel"
+	"permissionManage/perm-server/sys-common/supports"
+	"permissionManage/perm-server/sys-common/utils"
+	"permissionManage/perm-server/sys-common/vo"
+	"permissionManage/perm-server/sys-sysbase/models/user"
+	"permissionManage/perm-server/sys-sysbase/vo/uservo"
 	"strconv"
+	"strings"
 )
 
 //=============================   新增   =========================================
@@ -229,7 +229,7 @@ func FindUserList(paramVo *uservo.UserParamVO) (rs []*user.User, err error) {
 	result := make([]*user.User, 0)
 
 	sql := fmt.Sprintf(" SELECT * FROM cd_sys_user_user uu " +
-			" WHERE uu.is_deleted = false")
+		" WHERE uu.is_deleted = false")
 	if paramVo.DepartmentId != "" {
 		sql = sql + " AND uu.department_id = '" + paramVo.DepartmentId + "'"
 	}

@@ -1,9 +1,9 @@
 package uservo
 
 import (
-	"../../../sys-common/models/baseModel"
-	"../../../sys-common/vo"
-	"../../models/user"
+	"permissionManage/perm-server/sys-common/models/baseModel"
+	"permissionManage/perm-server/sys-common/vo"
+	"permissionManage/perm-server/sys-sysbase/models/user"
 	"time"
 )
 

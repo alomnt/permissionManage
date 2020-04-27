@@ -1,8 +1,8 @@
 package responseHandle
 
 import (
-	"../../../sys-common/supports"
-	"github.com/kataras/iris"
+	"github.com/kataras/iris/v12"
+	"permissionManage/perm-server/sys-common/supports"
 )
 
 func Response(ctx iris.Context, res *supports.SimResult) {

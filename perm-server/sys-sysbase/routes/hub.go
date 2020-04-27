@@ -1,17 +1,17 @@
 package routes
 
 import (
-	"../../sys-common/middleware"
-	"../../sys-common/supports"
+	"permissionManage/perm-server/sys-common/middleware"
+	"permissionManage/perm-server/sys-common/supports"
 
-	conf "../../sys-common/inits/parse"
+	conf "permissionManage/perm-server/sys-common/inits/parse"
 
-	"../routes/user"
 	"github.com/iris-contrib/middleware/cors"
-	"github.com/kataras/iris"
-	"github.com/kataras/iris/context"
-	"github.com/kataras/iris/middleware/logger"
-	rcover "github.com/kataras/iris/middleware/recover"
+	"github.com/kataras/iris/v12"
+	"github.com/kataras/iris/v12/context"
+	"github.com/kataras/iris/v12/middleware/logger"
+	rcover "github.com/kataras/iris/v12/middleware/recover"
+	"permissionManage/perm-server/sys-sysbase/routes/user"
 )
 
 // 所有的路由

@@ -1,11 +1,11 @@
 package main
 
 import (
-	_ "../sys-common/inits"
-	conf "../sys-common/inits/parse"
-	"../sys-sysbase/routes"
+	_ "permissionManage/perm-server/sys-common/inits"
+	conf "permissionManage/perm-server/sys-common/inits/parse"
+	"permissionManage/perm-server/sys-sysbase/routes"
 
-	"github.com/kataras/iris"
+	"github.com/kataras/iris/v12"
 )
 
 func main() {

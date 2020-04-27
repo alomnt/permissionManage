@@ -1,14 +1,14 @@
 package user
 
 import (
-	"../../../sys-common/models/baseModel"
-	"../../../sys-common/supports"
-	"../../../sys-common/supports/commonConst"
-	"../../../sys-common/supports/responseHandle"
-	"../../service/userService"
-	"../../vo/uservo"
-	"github.com/kataras/iris"
-	"github.com/kataras/iris/hero"
+	"github.com/kataras/iris/v12"
+	"github.com/kataras/iris/v12/hero"
+	"permissionManage/perm-server/sys-common/models/baseModel"
+	"permissionManage/perm-server/sys-common/supports"
+	"permissionManage/perm-server/sys-common/supports/commonConst"
+	"permissionManage/perm-server/sys-common/supports/responseHandle"
+	"permissionManage/perm-server/sys-sysbase/service/userService"
+	"permissionManage/perm-server/sys-sysbase/vo/uservo"
 )
 
 func UserHub(party iris.Party) {
@@ -16,11 +16,11 @@ func UserHub(party iris.Party) {
 	//p.Use(middleware.BasicAuth)s
 	u.Post("/registe", hero.Handler(Registe)) // 注册
 	u.Post("/login", hero.Handler(Login))     // 登录
-	u.Post("/logout", hero.Handler(LogOut)) // 登出
+	u.Post("/logout", hero.Handler(LogOut))   // 登出
 
 	u.Post("/addUser", hero.Handler(AddUser))       // 新增用户
 	u.Post("/updateUser", hero.Handler(UpdateUser)) // 更新用户
-	u.Post("/resetPass", hero.Handler(ResetPass)) // 重置密码
+	u.Post("/resetPass", hero.Handler(ResetPass))   // 重置密码
 	u.Post("/deleteUesr", hero.Handler(DeleteUesr)) // 删除用户
 
 	u.Post("/findUserById", hero.Handler(FindUserById))                   // 根据id查询

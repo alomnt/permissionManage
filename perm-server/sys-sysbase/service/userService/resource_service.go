@@ -1,13 +1,13 @@
 package userService
 
 import (
-	"../../../sys-common/db"
-	"../../../sys-common/supports"
-	"../../../sys-common/vo"
-	"../../models/user"
-	"../../vo/uservo"
 	"fmt"
 	"github.com/kataras/golog"
+	"permissionManage/perm-server/sys-common/db"
+	"permissionManage/perm-server/sys-common/supports"
+	"permissionManage/perm-server/sys-common/vo"
+	"permissionManage/perm-server/sys-sysbase/models/user"
+	"permissionManage/perm-server/sys-sysbase/vo/uservo"
 	"strings"
 )
 
@@ -208,7 +208,7 @@ func FindResourceList(resourceParam *uservo.ResourceParamVo) (rs []*user.Resourc
 	result := make([]*user.Resource, 0)
 
 	sql := fmt.Sprintf(" SELECT * FROM cd_sys_user_resource ur " +
-			" WHERE ur.is_deleted = false")
+		" WHERE ur.is_deleted = false")
 
 	err = e.SQL(sql).Find(&result)
 

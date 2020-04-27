@@ -1,21 +1,20 @@
 package casbins
 
 import (
-	"../../../sys-common/db"
-	"../../../sys-common/supports"
-	"../../../sys-common/supports/commonConst"
-	"../../inits/parse"
-	"../jwts"
 	"fmt"
 	"net/http"
+	"permissionManage/perm-server/sys-common/db"
+	"permissionManage/perm-server/sys-common/inits/parse"
+	"permissionManage/perm-server/sys-common/middleware/jwts"
+	"permissionManage/perm-server/sys-common/supports"
+	"permissionManage/perm-server/sys-common/supports/commonConst"
 	"strconv"
 	"sync"
 
 	"github.com/casbin/casbin"
 
-	//"github.com/casbin/xorm-adapter"
 	_ "github.com/go-sql-driver/mysql"
-	"github.com/kataras/iris/context"
+	"github.com/kataras/iris/v12/context"
 )
 
 var (

@@ -2,12 +2,12 @@ package db
 
 import (
 	"fmt"
-	"../inits/parse"
-	"../utils"
+	"permissionManage/perm-server/sys-common/inits/parse"
+	"permissionManage/perm-server/sys-common/utils"
 	"sync"
 
-	"github.com/go-xorm/core"
 	"github.com/kataras/golog"
+	"xorm.io/core"
 
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/go-xorm/xorm"

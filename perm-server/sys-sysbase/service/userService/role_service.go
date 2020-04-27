@@ -1,12 +1,12 @@
 package userService
 
 import (
-	"../../../sys-common/db"
-	"../../../sys-common/supports"
-	"../../../sys-common/vo"
-	"../../models/user"
-	"../../vo/uservo"
 	"fmt"
+	"permissionManage/perm-server/sys-common/db"
+	"permissionManage/perm-server/sys-common/supports"
+	"permissionManage/perm-server/sys-common/vo"
+	"permissionManage/perm-server/sys-sysbase/models/user"
+	"permissionManage/perm-server/sys-sysbase/vo/uservo"
 	"strings"
 )
 
@@ -86,7 +86,7 @@ func FindRoleList(roleParam *uservo.RoleParamVo) (res *supports.SimResult) {
 	result := make([]*user.Role, 0)
 
 	sql := fmt.Sprintf(" SELECT * FROM cd_sys_user_role ur " +
-			" WHERE ur.is_deleted = false")
+		" WHERE ur.is_deleted = false")
 
 	err := e.SQL(sql).Find(&result)
 	if err != nil {
@@ -147,12 +147,12 @@ func FindRolePages(paramVo *uservo.RoleParamVo) (res *supports.SimResult) {
 func GetRoleResourceByRoleIds(paramVo *uservo.RoleParamVo) (res *supports.SimResult) {
 	e := db.MasterEngine()
 	sql := fmt.Sprintf("SELECT" +
-			" ur.id" +
-			" FROM cd_sys_user_resource ur" +
-			" LEFT JOIN cd_sys_user_role_resource urr ON ur.id = urr.resource_id" +
-			" WHERE ur.is_deleted = 0" +
-			" AND ur.resource_type = '" + paramVo.ResourceType + "'" +
-			" AND urr.role_id = '" + paramVo.Id + "'")
+		" ur.id" +
+		" FROM cd_sys_user_resource ur" +
+		" LEFT JOIN cd_sys_user_role_resource urr ON ur.id = urr.resource_id" +
+		" WHERE ur.is_deleted = 0" +
+		" AND ur.resource_type = '" + paramVo.ResourceType + "'" +
+		" AND urr.role_id = '" + paramVo.Id + "'")
 	tmpRes, err := e.QueryString(sql)
 
 	if err != nil {
@@ -203,7 +203,7 @@ func FindUnDistributeRoluesByUserId(userId string) (res *supports.SimResult) {
 	e := db.MasterEngine()
 	result := make([]*user.Role, 0)
 	sql := "SELECT * FROM cd_sys_user_role ur WHERE ur.id NOT IN(SELECT uur.role_id FROM cd_sys_user_user_role uur WHERE uur.user_id = '" +
-			"" + userId + "') AND ur.is_deleted = FALSE"
+		"" + userId + "') AND ur.is_deleted = FALSE"
 	err := e.SQL(sql).Find(&result)
 	if err != nil {
 		res = &supports.SimResult{

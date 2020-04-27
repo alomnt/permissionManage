@@ -1,10 +1,10 @@
 package sys
 
 import (
-	"../../../sys-sysbase/models/user"
-	"../../db"
-	"../../middleware/casbins"
-	"../../utils"
+	"permissionManage/perm-server/sys-common/db"
+	"permissionManage/perm-server/sys-common/middleware/casbins"
+	"permissionManage/perm-server/sys-common/utils"
+	"permissionManage/perm-server/sys-sysbase/models/user"
 	"time"
 
 	"github.com/kataras/golog"

@@ -1,9 +1,9 @@
 package jwts
 
 import (
-	"../../supports"
 	"fmt"
 	"log"
+	"permissionManage/perm-server/sys-common/supports"
 	"strings"
 
 	"github.com/dgrijalva/jwt-go"
@@ -11,14 +11,14 @@ import (
 
 	"time"
 
-	"../../inits/parse"
+	"permissionManage/perm-server/sys-common/inits/parse"
 
-	"../../../sys-common/caches"
-	"../../../sys-common/models/baseModel"
-	"../../../sys-common/utils"
-	"../../../sys-sysbase/models/user"
-	"github.com/kataras/iris"
-	"github.com/kataras/iris/context"
+	"github.com/kataras/iris/v12"
+	"github.com/kataras/iris/v12/context"
+	"permissionManage/perm-server/sys-common/caches"
+	"permissionManage/perm-server/sys-common/models/baseModel"
+	"permissionManage/perm-server/sys-common/utils"
+	"permissionManage/perm-server/sys-sysbase/models/user"
 	"sync"
 )
 
@@ -297,7 +297,7 @@ func GenerateToken(user *user.User, currentUser *baseModel.CurrentUser) (string,
 
 	//tokenClaims := jwts.NewWithClaims(jwts.SigningMethodHS256, jwts.MapClaims{
 	//	"nick_name": "iris",
-	//	"email":     "../..@qq.com",
+	//	"email":     "permissionManage/perm-server@qq.com",
 	//	"id":        "1",
 	//	"iss":       "Iris",
 	//	"iat":       time.Now().Unix(),

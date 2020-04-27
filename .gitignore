@@ -6,3 +6,4 @@
 *rebel.xml*
 .idea/vcs.xml
 *\static
+perm-server/pkg/mod/cache/

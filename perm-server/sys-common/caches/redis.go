@@ -1,12 +1,12 @@
 package caches
 
 import (
-	"../conf"
 	"encoding/json"
 	"errors"
 	"fmt"
 	"github.com/garyburd/redigo/redis"
 	"github.com/pelletier/go-toml"
+	"permissionManage/perm-server/sys-common/conf"
 	"time"
 )
 

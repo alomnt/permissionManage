@@ -1,11 +1,11 @@
 package uservo
 
 import (
-	"../../../sys-common/models/baseModel"
-	"../../../sys-common/vo"
-	"../../../sys-common/vo/baseVo"
-	"../../models/user"
-	"../../../sys-common/utils"
+	"permissionManage/perm-server/sys-common/models/baseModel"
+	"permissionManage/perm-server/sys-common/utils"
+	"permissionManage/perm-server/sys-common/vo"
+	"permissionManage/perm-server/sys-common/vo/baseVo"
+	"permissionManage/perm-server/sys-sysbase/models/user"
 )
 
 // 前端需要的数据结构

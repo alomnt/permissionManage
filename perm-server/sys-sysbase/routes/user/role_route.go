@@ -1,14 +1,14 @@
 package user
 
 import (
-	"../../../sys-common/models/baseModel"
-	"../../../sys-common/supports"
-	"../../../sys-common/supports/commonConst"
-	"../../../sys-common/supports/responseHandle"
-	"../../service/userService"
-	"../../vo/uservo"
-	"github.com/kataras/iris"
-	"github.com/kataras/iris/hero"
+	"github.com/kataras/iris/v12"
+	"github.com/kataras/iris/v12/hero"
+	"permissionManage/perm-server/sys-common/models/baseModel"
+	"permissionManage/perm-server/sys-common/supports"
+	"permissionManage/perm-server/sys-common/supports/commonConst"
+	"permissionManage/perm-server/sys-common/supports/responseHandle"
+	"permissionManage/perm-server/sys-sysbase/service/userService"
+	"permissionManage/perm-server/sys-sysbase/vo/uservo"
 )
 
 func RoleHub(party iris.Party) {
@@ -18,11 +18,11 @@ func RoleHub(party iris.Party) {
 	menu.Post("/updateRole", hero.Handler(UpdateRole)) // 更新角色
 	menu.Post("/deleteRole", hero.Handler(DeleteRole)) // 删除角色
 
-	menu.Post("/findRoleById", hero.Handler(FindRoleById))         // 根据id查询
-	menu.Post("/findRoleByUserId", hero.Handler(FindRoleByUserId)) // 根据id查询
-	menu.Post("/findRoleList", hero.Handler(FindRoleList))         // 列表
-	menu.Post("/findRolePages", hero.Handler(FindRolePages))       // 分页
-	menu.Post("/findUnDistributeRoluesByUserId", hero.Handler(FindUnDistributeRoluesByUserId))       // 根据用户id查询用户未分配的角色
+	menu.Post("/findRoleById", hero.Handler(FindRoleById))                                     // 根据id查询
+	menu.Post("/findRoleByUserId", hero.Handler(FindRoleByUserId))                             // 根据id查询
+	menu.Post("/findRoleList", hero.Handler(FindRoleList))                                     // 列表
+	menu.Post("/findRolePages", hero.Handler(FindRolePages))                                   // 分页
+	menu.Post("/findUnDistributeRoluesByUserId", hero.Handler(FindUnDistributeRoluesByUserId)) // 根据用户id查询用户未分配的角色
 
 	menu.Post("/createRoleResource", hero.Handler(CreateRoleResource))             // 新增角色和菜单关系
 	menu.Post("/getRoleResourceByRoleIds", hero.Handler(GetRoleResourceByRoleIds)) // 查询角色所拥有的菜单

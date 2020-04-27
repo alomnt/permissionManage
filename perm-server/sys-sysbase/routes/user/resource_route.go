@@ -1,14 +1,14 @@
 package user
 
 import (
-	"../../../sys-common/models/baseModel"
-	"../../../sys-common/supports"
-	"../../../sys-common/supports/commonConst"
-	"../../../sys-common/supports/responseHandle"
-	"../../service/userService"
-	userVO "../../vo/uservo"
-	"github.com/kataras/iris"
-	"github.com/kataras/iris/hero"
+	"github.com/kataras/iris/v12"
+	"github.com/kataras/iris/v12/hero"
+	"permissionManage/perm-server/sys-common/models/baseModel"
+	"permissionManage/perm-server/sys-common/supports"
+	"permissionManage/perm-server/sys-common/supports/commonConst"
+	"permissionManage/perm-server/sys-common/supports/responseHandle"
+	"permissionManage/perm-server/sys-sysbase/service/userService"
+	userVO "permissionManage/perm-server/sys-sysbase/vo/uservo"
 )
 
 func ResoureHub(party iris.Party) {

@@ -1,8 +1,8 @@
 package user
 
 import (
-	"../../../sys-common/utils"
-	"../../../sys-common/db"
+	"permissionManage/perm-server/sys-common/db"
+	"permissionManage/perm-server/sys-common/utils"
 	"time"
 )
 

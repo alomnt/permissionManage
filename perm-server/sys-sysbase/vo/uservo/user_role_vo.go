@@ -1,9 +1,9 @@
 package uservo
 
 import (
-	"../../../sys-common/models/baseModel"
-	"../../models/user"
-		"time"
+	"permissionManage/perm-server/sys-common/models/baseModel"
+	"permissionManage/perm-server/sys-sysbase/models/user"
+	"time"
 )
 
 // 前端需要的数据结构
@@ -30,8 +30,8 @@ type UserRoleVO struct {
 type UserRoleParamVo struct {
 	*baseModel.CurrentUser
 
-	CheckType string `json:"checkType"`
-	UserId    string `json:"userId"`
+	CheckType string   `json:"checkType"`
+	UserId    string   `json:"userId"`
 	RoleIds   []string `json:"roleIds"`
 }
 

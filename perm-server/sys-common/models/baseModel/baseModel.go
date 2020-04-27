@@ -1,9 +1,9 @@
 package baseModel
 
 import (
-	"../../../sys-common/caches"
-	"../../../sys-common/db"
-	"../../../sys-common/utils"
+	"permissionManage/perm-server/sys-common/caches"
+	"permissionManage/perm-server/sys-common/db"
+	"permissionManage/perm-server/sys-common/utils"
 	"time"
 )
 
@@ -17,10 +17,10 @@ type BaseModel struct {
 	CreatorName           string    `json:"creator_name" form:"creator_name"`
 	IsDeleted             int64     `json:"isDeleted" form:"isDeleted"`
 	UpdateTime            time.Time `json:"update_time" form:"update_time"`
-	UpdatorDepartmentId   string    `json:"updator_department_id" form:"updator_department_id"`
-	UpdatorDepartmentName string    `json:"updator_department_name" form:"updator_department_name"`
-	UpdatorId             string    `json:"updator_id" form:"updator_id"`
-	UpdatorName           string    `json:"updator_name" form:"updator_name"`
+	UpdaterDepartmentId   string    `json:"updater_department_id" form:"updater_department_id"`
+	UpdaterDepartmentName string    `json:"updater_department_name" form:"updater_department_name"`
+	UpdaterId             string    `json:"updater_id" form:"updater_id"`
+	UpdaterName           string    `json:"updater_name" form:"updater_name"`
 	Version               int64     `json:"version" form:"version"`
 }
 

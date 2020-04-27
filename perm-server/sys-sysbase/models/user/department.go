@@ -1,10 +1,10 @@
 package user
 
 import (
-	"../../../sys-common/db"
-	"../../../sys-common/utils"
-	"time"
+	"permissionManage/perm-server/sys-common/db"
+	"permissionManage/perm-server/sys-common/utils"
 	"strconv"
+	"time"
 )
 
 // table  cd_sys_user_department
