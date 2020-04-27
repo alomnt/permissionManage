@@ -14,14 +14,14 @@ import (
 func UserHub(party iris.Party) {
 	var u = party.Party("/user")
 	//p.Use(middleware.BasicAuth)s
-	u.Post("/registe", hero.Handler(Registe)) // 注册
-	u.Post("/login", hero.Handler(Login))     // 登录
-	u.Post("/logout", hero.Handler(LogOut))   // 登出
+	u.Post("/register", hero.Handler(Register)) // 注册
+	u.Post("/login", hero.Handler(Login))       // 登录
+	u.Post("/logout", hero.Handler(LogOut))     // 登出
 
-	u.Post("/addUser", hero.Handler(AddUser))       // 新增用户
-	u.Post("/updateUser", hero.Handler(UpdateUser)) // 更新用户
-	u.Post("/resetPass", hero.Handler(ResetPass))   // 重置密码
-	u.Post("/deleteUesr", hero.Handler(DeleteUesr)) // 删除用户
+	u.Post("/addUser", hero.Handler(AddUser))         // 新增用户
+	u.Post("/updateUser", hero.Handler(UpdateUser))   // 更新用户
+	u.Post("/resetPassword", hero.Handler(ResetPass)) // 重置密码
+	u.Post("/deleteUser", hero.Handler(DeleteUesr))   // 删除用户
 
 	u.Post("/findUserById", hero.Handler(FindUserById))                   // 根据id查询
 	u.Post("/findPagesUser", hero.Handler(FindPagesUser))                 // 分页
@@ -30,7 +30,7 @@ func UserHub(party iris.Party) {
 	//u.Delete("/{uids:string}", hero.Handler(userService.DeleteUsers)) // 删除用户
 }
 
-func Registe(ctx iris.Context) {
+func Register(ctx iris.Context) {
 
 }
 
