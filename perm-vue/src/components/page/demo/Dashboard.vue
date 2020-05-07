@@ -76,7 +76,9 @@
                         </el-table-column>
                         <el-table-column>
                             <template slot-scope="scope">
-                                <div class="todo-item" :class="{'todo-item-del': scope.row.status}">{{scope.row.title}}</div>
+                                <div class="todo-item" :class="{'todo-item-del': scope.row.status}">
+                                    {{scope.row.title}}
+                                </div>
                             </template>
                         </el-table-column>
                         <el-table-column width="60">
@@ -97,7 +99,8 @@
             </el-col>
             <el-col :span="12">
                 <el-card shadow="hover">
-                    <schart ref="line" class="schart" canvasId="line" :data="data" type="line" :options="options2"></schart>
+                    <schart ref="line" class="schart" canvasId="line" :data="data" type="line"
+                            :options="options2"></schart>
                 </el-card>
             </el-col>
         </el-row>
@@ -106,16 +109,17 @@
 
 <script>
     import Schart from 'vue-schart';
-    import bus from 'permissionManage/perm-server/common/bus';
+    import bus from '../../common/bus';
+
     export default {
         name: 'dashboard',
         data() {
             return {
                 name: localStorage.getItem('ms_username'),
                 todoList: [{
-                        title: '今天要修复100个bug',
-                        status: false,
-                    },
+                    title: '今天要修复100个bug',
+                    status: false,
+                },
                     {
                         title: '今天要修复100个bug',
                         status: false,
@@ -137,9 +141,9 @@
                     }
                 ],
                 data: [{
-                        name: '2018/09/04',
-                        value: 1083
-                    },
+                    name: '2018/09/04',
+                    value: 1083
+                },
                     {
                         name: '2018/09/05',
                         value: 941
@@ -191,31 +195,31 @@
                 return this.name === 'admin' ? '超级管理员' : '普通用户';
             }
         },
-        created(){
+        created() {
             this.handleListener();
             this.changeDate();
         },
-        activated(){
+        activated() {
             this.handleListener();
         },
-        deactivated(){
+        deactivated() {
             window.removeEventListener('resize', this.renderChart);
             bus.$off('collapse', this.handleBus);
         },
         methods: {
-            changeDate(){
+            changeDate() {
                 const now = new Date().getTime();
                 this.data.forEach((item, index) => {
                     const date = new Date(now - (6 - index) * 86400000);
-                    item.name = `${date.getFullYear()}/${date.getMonth()+1}/${date.getDate()}`
+                    item.name = `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`
                 })
             },
-            handleListener(){
+            handleListener() {
                 bus.$on('collapse', this.handleBus);
                 // 调用renderChart方法对图表进行重新渲染
                 window.addEventListener('resize', this.renderChart)
             },
-            handleBus(msg){
+            handleBus(msg) {
                 setTimeout(() => {
                     // this.renderChart()
                 }, 300);

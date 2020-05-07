@@ -33,7 +33,7 @@
 
 <script>
     import bus from '../common/bus';
-    import {getUserId} from 'permissionManage/perm-server/utils/utils'
+    import {getUserId} from '../../utils/utils'
 
     export default {
         data() {

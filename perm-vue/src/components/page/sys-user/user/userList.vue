@@ -5,23 +5,27 @@
                 <el-row>
                     <el-col :span="8">
                         <div class="demo-input-suffix">编号:</div>
-                        <el-input style="width:55%;" placeholder="员工编号" size="small" v-model="search.userNumber"></el-input>
+                        <el-input style="width:55%;" placeholder="员工编号" size="small"
+                                  v-model="search.userNumber"></el-input>
                     </el-col>
                     <el-col :span="8">
                         <div class="demo-input-suffix">姓名:</div>
-                        <el-input style="width:55%;" placeholder="请输入姓名" size="small" v-model="search.userName"></el-input>
+                        <el-input style="width:55%;" placeholder="请输入姓名" size="small"
+                                  v-model="search.userName"></el-input>
                     </el-col>
                     <el-col :span="8">
                         <div class="demo-input-suffix">所属部门:</div>
                         <el-select style="width:55%;" placeholder="请选择所属部门" v-model="search.departmentId">
-                            <el-option v-for="item in departmentIdList" :key="item.id" :label="item.depName" :value="item.id"></el-option>
+                            <el-option v-for="item in departmentIdList" :key="item.id" :label="item.depName"
+                                       :value="item.id"></el-option>
                         </el-select>
                     </el-col>
                 </el-row>
                 <el-row>
                     <el-col :span="8">
                         <div class="demo-input-suffix">电话:</div>
-                        <el-input style="width:55%;" placeholder="请输入内容" size="small" v-model="search.mobile"></el-input>
+                        <el-input style="width:55%;" placeholder="请输入内容" size="small"
+                                  v-model="search.mobile"></el-input>
                     </el-col>
                 </el-row>
                 <el-row :gutter="20">
@@ -36,7 +40,8 @@
                     </el-col>
                 </el-row>
             </div>
-            <el-table :data="tableData" border class="table" ref="multipleTable" @selection-change="handleSelectionChange">
+            <el-table :data="tableData" border class="table" ref="multipleTable"
+                      @selection-change="handleSelectionChange">
                 <el-table-column type="selection" width="40"></el-table-column>
                 <el-table-column prop="userNumber" label="编号" width="150"></el-table-column>
                 <el-table-column prop="userName" label="姓名" width="120"></el-table-column>
@@ -66,7 +71,8 @@
                 </el-table-column>
             </el-table>
             <div class="pagination">
-                <el-pagination background @current-change="handleCurrentChange" layout="prev, pager, next" :total="Total"></el-pagination>
+                <el-pagination background @current-change="handleCurrentChange" layout="prev, pager, next"
+                               :total="Total"></el-pagination>
             </div>
         </div>
         <!-- 新增弹出框 -->
@@ -75,20 +81,24 @@
             <el-form :model="userForm" :rules="rules" ref="userForm" label-width="100px">
                 <el-form-item label="所属部门" prop="departmentId">
                     <el-select placeholder="请选择所属部门" v-model="userForm.departmentId">
-                        <el-option v-for="item in departmentIdList" :key="item.id" :label="item.depName" :value="item.id"></el-option>
+                        <el-option v-for="item in departmentIdList" :key="item.id" :label="item.depName"
+                                   :value="item.id"></el-option>
                     </el-select>
                 </el-form-item>
                 <el-form-item label="姓名" prop="userName">
                     <el-input v-model="userForm.userName" placeholder="请输入姓名"></el-input>
                 </el-form-item>
                 <el-form-item label="账号" prop="userAccount">
-                    <el-input v-model="userForm.userAccount" placeholder="请输入账号" onkeyup="this.value=this.value.replace(/[^\w_]/g,'');"></el-input>
+                    <el-input v-model="userForm.userAccount" placeholder="请输入账号"
+                              onkeyup="this.value=this.value.replace(/[^\w_]/g,'');"></el-input>
                 </el-form-item>
                 <el-form-item label="密码" prop="userPassword">
-                    <el-input type="password" maxlength="20" v-model="userForm.userPassword" placeholder="请输入密码"></el-input>
+                    <el-input type="password" maxlength="20" v-model="userForm.userPassword"
+                              placeholder="请输入密码"></el-input>
                 </el-form-item>
                 <el-form-item label="确认密码" prop="reUserPassword">
-                    <el-input type="password" maxlength="20" v-model="userForm.reUserPassword" placeholder="请输入确认密码"></el-input>
+                    <el-input type="password" maxlength="20" v-model="userForm.reUserPassword"
+                              placeholder="请输入确认密码"></el-input>
                 </el-form-item>
                 <el-form-item label="邮箱" prop="email">
                     <el-input v-model="userForm.email" placeholder="请输入邮箱"></el-input>
@@ -109,14 +119,16 @@
             </span>
         </el-dialog>
         <!-- 查看权限-->
-        <el-dialog :title="setTitle" :visible.sync="powerVisible" width="37%" :close-on-press-escape="false" :close-on-click-modal="false">
+        <el-dialog :title="setTitle" :visible.sync="powerVisible" width="37%" :close-on-press-escape="false"
+                   :close-on-click-modal="false">
             <el-table :data="powerData" border class="table" ref="multipleTable">
                 <el-table-column prop="label" label="角色名称"></el-table-column>
                 <el-table-column prop="description" label="角色描述"></el-table-column>
             </el-table>
         </el-dialog>
         <!-- 分配角色 -->
-        <el-dialog :title="setTitle" :visible.sync="roleVisible" width="45%" :close-on-press-escape="false" :close-on-click-modal="false">
+        <el-dialog :title="setTitle" :visible.sync="roleVisible" width="45%" :close-on-press-escape="false"
+                   :close-on-click-modal="false">
             <template>
                 <el-transfer
                         v-model="value3"
@@ -140,7 +152,8 @@
         <!-- 重置密码 -->
         <el-dialog :title="setTitle" :visible.sync="resetVisible" width="37%" :close-on-press-escape="false"
                    :close-on-click-modal="false">
-            <el-form :model="resetPasswordForm" status-icon :rules="rules" ref="resetPasswordForm" label-width="100px" class="demo-ruleForm">
+            <el-form :model="resetPasswordForm" status-icon :rules="rules" ref="resetPasswordForm" label-width="100px"
+                     class="demo-ruleForm">
                 <el-form-item label="新密码" prop="password">
                     <el-input type="password" v-model="resetPasswordForm.password"></el-input>
                 </el-form-item>
@@ -151,11 +164,13 @@
             </el-form>
         </el-dialog>
         <!-- 编辑 -->
-        <el-dialog :title="setTitle" :visible.sync="editUserVisible" width="37%" :close-on-press-escape="false" :close-on-click-modal="false">
+        <el-dialog :title="setTitle" :visible.sync="editUserVisible" width="37%" :close-on-press-escape="false"
+                   :close-on-click-modal="false">
             <el-form :model="editUserForm" status-icon ref="editUserForm" label-width="100px" class="demo-ruleForm">
                 <el-form-item label="所属部门" prop="departmentId">
                     <el-select placeholder="请选择所属部门" v-model="departmentId">
-                        <el-option v-for="item in departmentIdList" :key="item.id" :label="item.depName" :value="item.id"></el-option>
+                        <el-option v-for="item in departmentIdList" :key="item.id" :label="item.depName"
+                                   :value="item.id"></el-option>
                     </el-select>
                 </el-form-item>
                 <el-form-item label="姓名:" prop="username">
@@ -191,7 +206,9 @@
                 rolesAll: [],//所有角色
                 value3: [],//选中角色
                 renderFunc(h, option) {
-                    return <span>{option.label}</span>
+                    return
+                <
+                    span > {option.label} < /span>
                 },
 
 
@@ -397,11 +414,9 @@
             },
             handleDialogClose(userForm) {  //新增弹窗关闭
                 this.$refs[userForm].resetFields();
-                this.$refs.upload.clearFiles();
             },
             newVisibleBtn(userForm) {  //新增取消
                 this.$refs[userForm].resetFields();
-                this.$refs.upload.clearFiles();
                 this.newVisible = false;
             },
             searchRoleBtn() {//批量分配搜索
